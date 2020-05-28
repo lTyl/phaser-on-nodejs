@@ -5,7 +5,7 @@ declare global {
       window: any
       Image: any
       navigator: any
-      XMLHttpRequest: any
+      // XMLHttpRequest: any
       HTMLCanvasElement: any
       HTMLVideoElement: any
       requestAnimationFrame: any
@@ -31,7 +31,7 @@ global.window = window
 global.Image = Canvas.Image
 global.window.Element = undefined
 global.navigator = { userAgent: 'node' }
-global.XMLHttpRequest = FakeXMLHttpRequest
+// global.XMLHttpRequest = FakeXMLHttpRequest
 global.HTMLCanvasElement = window.HTMLCanvasElement
 global.HTMLVideoElement = window.HTMLVideoElement
 
@@ -40,7 +40,7 @@ global.URL.createObjectURL = (base64: any) => `data:image/png;base64,${base64}`
 global.URL.revokeObjectURL = () => {}
 
 // phaser on node variables
-global.phaserOnNodeFPS = 60
+global.phaserOnNodeFPS = 15
 
 const animationFrame = (cb: any) => {
   if (typeof cb !== 'function') return 0 // this line saves a lot of cpu
